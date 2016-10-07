@@ -8,9 +8,11 @@ Netflow v5,9: 2055/udp
 Netflow v10: 4739/udp
 
 To build the repo:
+```
 docker build -t vignitin/jflow-reporter .
-
+```
 
 To run this repo:
+```
 docker run -p 5601:5601 -p 9200:9200 -p 2055:2055/udp -p 4739:4739/udp -v <local host>/<directory>:/var/lib/elasticsearch -it --name jflowrep_con vignitin/jflow-reporter
-
+```
