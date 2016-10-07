@@ -4,8 +4,8 @@ Netflow data visualization for Juniper devices using ELK stack
 This repo used a modified ELK stack to provide netflow data visualization for Juniper devices. It supports Netflow version 5, 9, & IPFIX. The netflow codec has been modified specifically to support IPFIX records from Juniper Service Control Gateway's (SCG) DPI function.
 
 This container listens the following ports:
-- **Netflow v5,9**: 2055/udp
-- **Netflow v10**: 4739/udp
+- Netflow v5,9: **2055/udp**
+- Netflow v10: **4739/udp**
 
 To build the repo:
 ```
