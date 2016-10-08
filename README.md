@@ -11,6 +11,11 @@ The container also be used for visualizing any netflow version 5, 9 and 10 recor
 - Netflow v5,9: **2055/udp**
 - Netflow v10: **4739/udp**
 
+The ELK versions used in this container are:
+Logstash (collector): 2.4
+Elasticsearch (database/search engine): 2.4
+Kibana (front-end): 2.6.1
+
 Pre-requisites:
 ---------------
 
@@ -57,19 +62,23 @@ mkdir /data/elasticsearch
 
 2) Use the following command to run the container:
 ```
-docker run -p 5601:5601 -p 9200:9200 -p 2055:2055/udp -p 4739:4739/udp -v data/elasticsearch:/var/lib/elasticsearch -it --name jdpirep_con vignitin/jnpr-dpi-reporter
+docker run -p 5601:5601 -p 9200:9200 -p 2055:2055/udp -p 4739:4739/udp -v /data/elasticsearch:/var/lib/elasticsearch -it --name jdpirep_con vignitin/jnpr-dpi-reporter
 ```
 It takes about 1-2 minutes for all container services to start. Once the services have started, the kibana front-end can be accessed at: http://localhost:5601
 
 
 Post-installation configuration:
 --------------------------------
+After installation, the tool will wait to receive netflow data from the network. Once it starts receiving data, a new index pattern needs to be configured in Kibana to start building the visualizations. 
 
-Setting up the Elasticsearch indices:
-
-When there is no data in the Initially, kibana displays the following 
+Configuring the index pattern in Kibana:
+When you first login to Kibana (http://localhost:5601), you will see the 'Settings' tab where the index needs to be configured. When the tool has not received any data yet, the screen looks as follows: 
 ![Kibana initial screen](/images/kibana-initial-screen.png "Kibana initial screen")
 
+Once the tool starts receiving netflow data, the kibana screen will changes as below allowing you to create a new index. Configure a new index pattern here, by entering 'logstash-netflow*' under the 'Index name or pattern' and click 'Create':
+![Kibana index configuration](/images/kibana-index-config.png "Kibana index configuration")
+
+Once the index is configured, the received DPI IPFIX records can be visualized in Kibana.
 
 Configuring the scripted field:
 
