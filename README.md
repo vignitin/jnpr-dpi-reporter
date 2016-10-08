@@ -9,10 +9,10 @@ The container also be used for visualizing any netflow version 5, 9 and 10 recor
 - Netflow v5,9: **2055/udp**
 - Netflow v10: **4739/udp**
 
-# Pre-requisites
-The requirements is to have docker and docker-compose installed on your host. Docker installation instructions can be found [here]: (https://docs.docker.com/engine/installation/)
+## Pre-requisites
+The requirements is to have docker and docker-compose installed on your host. Docker installation instructions can be found here: https://docs.docker.com/engine/installation/
 
-# Installation
+## Installation
 To build the repo:
 ```
 docker build -t vignitin/jnpr-dpi-reporter .
