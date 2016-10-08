@@ -6,7 +6,7 @@
 # docker build -t vignitin/jnpr-dpi-reporter .
 
 # Run with:
-# docker run -p 5601:5601 -p 9200:9200 -p 2055:2055/udp -p 4739:4739/udp -v /Users/nitinvig/Scripting/Projects/jflow-data/elasticsearch:/var/lib/elasticsearch -it --name jflowrep_con vignitin/jflow-reporter
+# docker run -p 5601:5601 -p 9200:9200 -p 2055:2055/udp -p 4739:4739/udp -v <locahost>/<directory>:/var/lib/elasticsearch -it --name jdpirep_con vignitin/jnpr-dpi-reporter
 
 FROM phusion/baseimage
 MAINTAINER Nitin Vig <vignitin@gmail.com>
