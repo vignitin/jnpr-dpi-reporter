@@ -72,10 +72,10 @@ After installation, the tool will wait to receive netflow data from the network.
 
 Configuring the index pattern in Kibana:
 When you first login to Kibana (http://localhost:5601), you will see the 'Settings' tab where the index needs to be configured. When the tool has not received any data yet, the screen looks as follows: 
-
+![Kibana index configuration](/images/kibana-index-config.png "Kibana index configuration")
 
 Once the tool starts receiving netflow data, the kibana screen will changes as below allowing you to create a new index. Configure a new index pattern here, by entering 'logstash-netflow*' under the 'Index name or pattern' and click 'Create':
-
+![Kibana initial screen](/images/kibana-initial-screen.png "Kibana initial screen")
 
 Once the index is configured, the received DPI IPFIX records can be visualized in Kibana.
 
