@@ -16,5 +16,5 @@ docker build -t vignitin/jnpr-dpi-reporter .
 
 To run this repo:
 ```
-docker run -p 5601:5601 -p 9200:9200 -p 2055:2055/udp -p 4739:4739/udp -v <local host>/<directory>:/var/lib/elasticsearch -it --name jflowrep_con vignitin/jnpr-dpi-reporter
+docker run -p 5601:5601 -p 9200:9200 -p 2055:2055/udp -p 4739:4739/udp -v <local host>/<directory>:/var/lib/elasticsearch -it --name jdpirep_con vignitin/jnpr-dpi-reporter
 ```
