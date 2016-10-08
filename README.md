@@ -54,8 +54,10 @@ It takes about 1-2 minutes for all container services to start. Once the service
 
 ### Post-installation configuration:
 
-> Setting up the Elasticsearch indices:
+Setting up the Elasticsearch indices:
 
-When there is no data in the Initially, kibana displays the following 
+> When there is no data in the Initially, kibana displays the following 
 
-> Configuring the scripted field:
+Configuring the scripted field:
+
+> ABCD
