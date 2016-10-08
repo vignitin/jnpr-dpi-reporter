@@ -1,15 +1,17 @@
 # jnpr-dpi-reporter
-Netflow data visualization for Juniper devices using ELK stack
+Data visualization for Juniper MX-based DPI using ELK stack
 
-This repo used a modified ELK stack to provide netflow data visualization for Juniper devices. It supports Netflow version 5, 9, & IPFIX. The netflow codec has been modified specifically to support IPFIX records from Juniper Service Control Gateway's (SCG) DPI function.
+**jnpr-dpi-reporter** is a containerized data visualization tool for Juniper MX-based DPI devices. The Juniper MX-based Services Control Gateway (SCG) when used as a DPI exports flow information in the IPFIX format (RFC 7011). The IPFIX records include Juniper enterprise-specific Information Elements to provide detailed information about the flows.
 
-This container listens the following ports:
+This container is based on an ELK stack. The logstash netflow codec has been modified to support IPFIX records from Juniper MX-based SCG DPI. To get things started, a few Kibana plugins, visualizations and a Summary dashboard have been included in the container. 
+
+The container also be used for visualizing any netflow version 5, 9 and 10 records. It listens the following ports:
 - Netflow v5,9: **2055/udp**
 - Netflow v10: **4739/udp**
 
 To build the repo:
 ```
-docker build -t vignitin/jflow-reporter .
+docker build -t vignitin/jnpr-dpi-reporter .
 ```
 
 To run this repo:
