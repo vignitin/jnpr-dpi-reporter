@@ -13,7 +13,7 @@ The container also be used for visualizing any netflow version 5, 9 and 10 recor
 ### Pre-requisites
 --------------------
 
-Supported Features Highlights
+### Supported Features Highlights
 -----------------------------
 
 The requirements is to have docker and docker-compose installed on your host. Docker installation instructions can be found here: https://docs.docker.com/engine/installation/
