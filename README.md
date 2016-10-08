@@ -1,4 +1,4 @@
-# jflow-reporter
+# jnpr-dpi-reporter
 Netflow data visualization for Juniper devices using ELK stack
 
 This repo used a modified ELK stack to provide netflow data visualization for Juniper devices. It supports Netflow version 5, 9, & IPFIX. The netflow codec has been modified specifically to support IPFIX records from Juniper Service Control Gateway's (SCG) DPI function.
