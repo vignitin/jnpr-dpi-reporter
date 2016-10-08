@@ -71,6 +71,7 @@ Post-installation configuration:
 After installation, the tool will wait to receive netflow data from the network. Once it starts receiving data, a new index pattern needs to be configured in Kibana to start building the visualizations. 
 
 **Configuring the index pattern:**
+
 When you first login to Kibana (http://localhost:5601), you will see the 'Settings' tab where the index needs to be configured. When the tool has not received any data yet, the screen looks as follows: 
 
 ![Kibana initial screen](/images/kibana-initial-screen.png "Kibana initial screen")
