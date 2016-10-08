@@ -13,10 +13,14 @@ The container also be used for visualizing any netflow version 5, 9 and 10 recor
 
 ### Pre-requisites
 --------------------
+
 The requirements is to have docker and docker-compose installed on your host. Docker installation instructions can be found here: https://docs.docker.com/engine/installation/
+
+
 
 ### Installation
 ---------------------
+
 To install the jnpr-dpi-reporter container, you can either be pull it directly from the Docker hub or use this git repository to build it from scratch:
 
 Docker container: https://hub.docker.com/r/vignitin/jnpr-dpi-reporter/
@@ -43,8 +47,10 @@ cd jnpr-dpi-reporter
 docker build -t vignitin/jnpr-dpi-reporter .
 ```
 
+
 ## Run the container:
 ------------------------
+
 > Create a directory on your localhost to map the volume from the container:
 ```
 mkdir /data/elasticsearch
@@ -56,8 +62,10 @@ docker run -p 5601:5601 -p 9200:9200 -p 2055:2055/udp -p 4739:4739/udp -v data/e
 ```
 It takes about 1-2 minutes for all container services to start. Once the services have started, the kibana front-end can be accessed at: http://localhost:5601
 
+
 ### Post-installation configuration:
 ---------------------------------------
+
 Setting up the Elasticsearch indices:
 
 > When there is no data in the Initially, kibana displays the following 
