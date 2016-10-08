@@ -1,4 +1,4 @@
-jnpr-dpi-reporter: Open-source data visualization tool for Juniper MX-based DPI
+jnpr-dpi-reporter: Data visualization tool for Juniper MX-based DPI
 ==================
 
 **jnpr-dpi-reporter** is a containerized data visualization tool for Juniper MX-based DPI devices. 
