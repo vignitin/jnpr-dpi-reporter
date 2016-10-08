@@ -1,4 +1,5 @@
-# jnpr-dpi-reporter: 
+jnpr-dpi-reporter:
+==================
 
 Open-source data visualization tool for Juniper MX-based DPI
 
@@ -10,18 +11,15 @@ The container also be used for visualizing any netflow version 5, 9 and 10 recor
 - Netflow v5,9: **2055/udp**
 - Netflow v10: **4739/udp**
 
-### Pre-requisites
---------------------
-
-### Supported Features Highlights
------------------------------
+Pre-requisites:
+---------------
 
 The requirements is to have docker and docker-compose installed on your host. Docker installation instructions can be found here: https://docs.docker.com/engine/installation/
 
 
 
-### Installation
----------------------
+Installation:
+-------------
 
 To install the jnpr-dpi-reporter container, you can either be pull it directly from the Docker hub or use this git repository to build it from scratch:
 
@@ -50,8 +48,8 @@ docker build -t vignitin/jnpr-dpi-reporter .
 ```
 
 
-## Run the container:
-------------------------
+Run the container:
+------------------
 
 > Create a directory on your localhost to map the volume from the container:
 ```
@@ -65,8 +63,8 @@ docker run -p 5601:5601 -p 9200:9200 -p 2055:2055/udp -p 4739:4739/udp -v data/e
 It takes about 1-2 minutes for all container services to start. Once the services have started, the kibana front-end can be accessed at: http://localhost:5601
 
 
-### Post-installation configuration:
----------------------------------------
+Post-installation configuration:
+--------------------------------
 
 Setting up the Elasticsearch indices:
 
