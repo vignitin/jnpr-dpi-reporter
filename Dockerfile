@@ -1,9 +1,9 @@
-# Dockerfile for Juniper jflow-reporter based on ELK stack
+# Dockerfile for Juniper jnpr-dpi-reporter based on ELK stack
 # Uses Elasticsearch 2.4.0, Logstash 2.4.0, Kibana 4.6.0
 ##{PENDING} Add cronjob for Geo-ip data
 
 # Build with:
-# docker build -t vignitin/jflow-reporter .
+# docker build -t vignitin/jnpr-dpi-reporter .
 
 # Run with:
 # docker run -p 5601:5601 -p 9200:9200 -p 2055:2055/udp -p 4739:4739/udp -v /Users/nitinvig/Scripting/Projects/jflow-data/elasticsearch:/var/lib/elasticsearch -it --name jflowrep_con vignitin/jflow-reporter
