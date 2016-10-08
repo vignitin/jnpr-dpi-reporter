@@ -18,7 +18,7 @@ Kibana (front-end): 2.6.1
 
 Pre-requisites:
 ---------------
-The requirements is to have docker and docker-compose installed on your host. Docker installation instructions can be found here: https://docs.docker.com/engine/installation/
+The requirements is to have docker installed on your localhost. Docker installation instructions can be found here: https://docs.docker.com/engine/installation/
 
 
 
