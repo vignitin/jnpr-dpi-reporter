@@ -80,8 +80,27 @@ Once the tool starts receiving netflow data, the kibana screen will changes as b
 
 ![Kibana-index-configuration](/images/kibana-index-config.png "Kibana-index-configuration")
 
-Once the index is configured, the received DPI IPFIX records can be visualized in Kibana.
+**Modifying the index:**
+Once the index is configured, the received DPI IPFIX records can be visualized in Kibana. For some of the visualizations to work correctly, two of the index fields need to be modified and a new scripted field needs to be added.
 
-**Configuring the scripted field:**
+1) Modifying the 'netflow.uplinkOctets' and 'netflowdownlinkOctets' fields:
+The 'netflow.uplinkOctets' and 'netflowdownlinkOctets' fields specify the number of uplink and downlink Octets consumed by a subscriber. For better visualization of the octets consumed, change the format of these fields in the index to 'Bytes'. To modify the fields, go to 'Settings' \> 'Indices' \> logstash-netflow\* and click on the field to be modified. An example for the netflow.downlinkOctets is shown below:
 
-ABCD
+![Kibana-downlinkOctets](/images/kibana-downlinkOctets.png "Kibana-downlinkOctets")
+
+![Kibana-downlinkOctets-Bytes](/images/kibana-downlinkOctets-Bytes.png "Kibana-downlinkOctets-Bytes")
+
+2) Adding the 'totalOctets' Scripted field:
+In order to generate visualizations on total uplink and downlink Octets consumed by a subscriber, a new scripted field called 'totalOctets' is created. To create a Scripted field, go to 'Settings' \> 'Indices' \> logstash-netflow\* \> 'scripted fields' tab, then click on 'Add Scripted Field':
+
+![Kibana-ScriptedField-initial](/images/kibana-ScriptedField-initial.png "Kibana-ScriptedField-initial")
+
+Name the new field as 'totalOctets', specify the format as 'Bytes', enter the enter the below formula in the script tab and click 'update field':
+```
+doc['netflow.downlinkOctets'].value + doc['netflow.uplinkOctets'].value
+```
+
+![Kibana-ScriptedField-totalOctets](/images/kibana-ScriptedField-totalOctets.png "Kibana-ScriptedField-totalOctets")
+
+That's it! The visualizations and dashboard in the container should work fine now.
+
