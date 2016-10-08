@@ -1,17 +1,17 @@
-jnpr-dpi-reporter
+jnpr-dpi-reporter: Open-source data visualization tool for Juniper MX-based DPI
 ==================
 
-Open-source data visualization tool for Juniper MX-based DPI
+**jnpr-dpi-reporter** is a containerized data visualization tool for Juniper MX-based DPI devices. 
 
-**jnpr-dpi-reporter** is a containerized data visualization tool for Juniper MX-based DPI devices. The Juniper MX-based Services Control Gateway (SCG) when used as a DPI exports flow information in the IPFIX format (RFC 7011). The IPFIX records include Juniper enterprise-specific Information Elements to provide detailed information about the flows.
+The Juniper MX-based Services Control Gateway (SCG) when configured as a DPI, exports information about the subscriber flows in the IPFIX format (RFC 7011). Along with the standard netflow fields, export IPFIX records also include Juniper enterprise-specific Information Elements that provide more detailed information about the flows. These records can be consumed by an IPFIX collector and fed into a data visualization tool.
 
-This container is based on an ELK stack. The logstash netflow codec has been modified to support IPFIX records from Juniper MX-based SCG DPI. To get things started, a few Kibana plugins, visualizations and a Summary dashboard have been included in the container. 
+In the jnpr-dpi-reported docker container is based on the ELK stack and the netflow codec in the logstash collector has been modified to support the Juniper enterprise-specific Information Elements. Additionally, to get things started a few Kibana plugins, visualizations and a Summary dashboard have been included in this container.
 
 The container also be used for visualizing any netflow version 5, 9 and 10 records. It listens on the following ports:
 - Netflow v5,9: **2055/udp**
 - Netflow v10: **4739/udp**
 
-The ELK versions used in this container are:
+The following ELK versions have been used:
 Logstash (collector): 2.4
 Elasticsearch (database/search engine): 2.4
 Kibana (front-end): 2.6.1
@@ -48,6 +48,7 @@ cd jnpr-dpi-reporter
 ```
 docker build -t vignitin/jnpr-dpi-reporter .
 ```
+
 
 
 Run the container:
@@ -103,4 +104,3 @@ doc['netflow.downlinkOctets'].value + doc['netflow.uplinkOctets'].value
 ![Kibana-ScriptedField-totalOctets](/images/kibana-ScriptedField-totalOctets.png "Kibana-ScriptedField-totalOctets")
 
 That's it! The visualizations and dashboard in the container should work fine now.
-
