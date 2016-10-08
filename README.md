@@ -1,4 +1,4 @@
-jnpr-dpi-reporter:
+jnpr-dpi-reporter
 ==================
 
 Open-source data visualization tool for Juniper MX-based DPI
@@ -68,6 +68,8 @@ Post-installation configuration:
 Setting up the Elasticsearch indices:
 
 When there is no data in the Initially, kibana displays the following 
+![Kibana initial screen](/images/kibana-initial-screen.png "Kibana initial screen")
+
 
 Configuring the scripted field:
 
