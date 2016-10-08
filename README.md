@@ -87,7 +87,7 @@ Once the index is configured, the received DPI IPFIX records can be visualized i
 
 1) Modifying the 'netflow.uplinkOctets' and 'netflowdownlinkOctets' fields:
 
-The 'netflow.uplinkOctets' and 'netflowdownlinkOctets' fields specify the number of uplink and downlink Octets consumed by a subscriber. For better visualization of the octets consumed, change the format of these fields in the index to 'Bytes'. To modify the fields, go to 'Settings' \> 'Indices' \> logstash-netflow\* and click on the field to be modified. An example for the netflow.downlinkOctets is shown below:
+The 'netflow.uplinkOctets' and 'netflowdownlinkOctets' fields specify the uplink and downlink Octets consumed by a subscriber. For better visualization of the octets consumed, change the format of these fields to 'Bytes'. To modify the fields, go to 'Settings' \> 'Indices' \> logstash-netflow\* and click on the field to be modified. An example for the netflow.downlinkOctets is shown below:
 
 ![Kibana-downlinkOctets](/images/kibana-downlinkOctets.png "Kibana-downlinkOctets")
 
@@ -106,4 +106,4 @@ doc['netflow.downlinkOctets'].value + doc['netflow.uplinkOctets'].value
 
 ![Kibana-ScriptedField-totalOctets](/images/kibana-ScriptedField-totalOctets.png "Kibana-ScriptedField-totalOctets")
 
-That's it! The visualizations and dashboard in the container should work fine now.
+That's it! The visualizations and dashboard in the container should work as expected now.
