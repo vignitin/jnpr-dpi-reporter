@@ -26,23 +26,23 @@ To install the jnpr-dpi-reporter container, you can either be pull it directly f
 Docker container: https://hub.docker.com/r/vignitin/jnpr-dpi-reporter/
 
 To pull the container from Docker hub:
->```
+```
 docker pull vignitin/jnpr-dpi-reporter
 ```
 
 To build the container from this git repository:
 
 1) Download or clone the git repository:
->```
+```
 git clone https://github.com/vignitin/jnpr-dpi-reporter.git
 ```
 2) Change to the directory
->```
+```
 cd jnpr-dpi-reporter
 ```
 
 3) Build the docker container
->```
+```
 docker build -t vignitin/jnpr-dpi-reporter .
 ```
 
@@ -51,12 +51,12 @@ Run the container:
 ------------------
 
 1) Create a directory on your localhost to map the volume from the container:
->```
+```
 mkdir /data/elasticsearch
 ```
 
 2) Use the following command to run the container:
->```
+```
 docker run -p 5601:5601 -p 9200:9200 -p 2055:2055/udp -p 4739:4739/udp -v data/elasticsearch:/var/lib/elasticsearch -it --name jdpirep_con vignitin/jnpr-dpi-reporter
 ```
 It takes about 1-2 minutes for all container services to start. Once the services have started, the kibana front-end can be accessed at: http://localhost:5601
