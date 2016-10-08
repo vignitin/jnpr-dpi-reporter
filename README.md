@@ -1,5 +1,7 @@
-# jnpr-dpi-reporter
-Data visualization for Juniper MX-based DPI using ELK stack
+# jnpr-dpi-reporter: 
+=========================
+
+Open-source data visualization tool for Juniper MX-based DPI
 
 **jnpr-dpi-reporter** is a containerized data visualization tool for Juniper MX-based DPI devices. The Juniper MX-based Services Control Gateway (SCG) when used as a DPI exports flow information in the IPFIX format (RFC 7011). The IPFIX records include Juniper enterprise-specific Information Elements to provide detailed information about the flows.
 
@@ -10,9 +12,11 @@ The container also be used for visualizing any netflow version 5, 9 and 10 recor
 - Netflow v10: **4739/udp**
 
 ### Pre-requisites
+--------------------
 The requirements is to have docker and docker-compose installed on your host. Docker installation instructions can be found here: https://docs.docker.com/engine/installation/
 
 ### Installation
+---------------------
 To install the jnpr-dpi-reporter container, you can either be pull it directly from the Docker hub or use this git repository to build it from scratch:
 
 Docker container: https://hub.docker.com/r/vignitin/jnpr-dpi-reporter/
@@ -40,7 +44,7 @@ docker build -t vignitin/jnpr-dpi-reporter .
 ```
 
 ## Run the container:
-
+------------------------
 > Create a directory on your localhost to map the volume from the container:
 ```
 mkdir /data/elasticsearch
@@ -53,7 +57,7 @@ docker run -p 5601:5601 -p 9200:9200 -p 2055:2055/udp -p 4739:4739/udp -v data/e
 It takes about 1-2 minutes for all container services to start. Once the services have started, the kibana front-end can be accessed at: http://localhost:5601
 
 ### Post-installation configuration:
-
+---------------------------------------
 Setting up the Elasticsearch indices:
 
 > When there is no data in the Initially, kibana displays the following 
