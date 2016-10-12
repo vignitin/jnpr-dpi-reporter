@@ -69,40 +69,7 @@ It takes about 1-2 minutes for all container services to start. Once the service
 
 Post-installation configuration:
 --------------------------------
-After installation, the tool will wait to receive netflow data from the network. Once it starts receiving data, a new index pattern needs to be configured in Kibana to start building the visualizations. 
-
-**Configuring the index pattern:**
-
-When you first login to Kibana (http://localhost:5601), you will see the 'Settings' tab where the index needs to be configured. When the tool has not received any data yet, the screen looks as follows: 
-
-![Kibana-initial-screen](/images/kibana-initial-screen.png "Kibana-initial-screen")
-
-Once the tool starts receiving netflow data, the kibana screen will changes as below allowing you to create a new index. Configure a new index pattern here, by entering 'logstash-netflow*' under the 'Index name or pattern' and click 'Create':
-
-![Kibana-index-configuration](/images/kibana-index-config.png "Kibana-index-configuration")
-
-**Modifying the index:**
-
-Once the index is configured, the received DPI IPFIX records can be visualized in Kibana. For some of the visualizations to work correctly, two of the index fields need to be modified and a new scripted field needs to be added.
-
-1) Modifying the 'netflow.uplinkOctets' and 'netflowdownlinkOctets' fields:
-
-The 'netflow.uplinkOctets' and 'netflowdownlinkOctets' fields specify the uplink and downlink Octets consumed by a subscriber. For better visualization of the octets consumed, change the format of these fields to 'Bytes'. To modify the fields, go to 'Settings' \> 'Indices' \> logstash-netflow\* and click on the field to be modified. An example for the netflow.downlinkOctets is shown below:
-
-![Kibana-downlinkOctets](/images/kibana-downlinkOctets.png "Kibana-downlinkOctets")
-
-![Kibana-downlinkOctets-Bytes](/images/kibana-downlinkOctets-Bytes.png "Kibana-downlinkOctets-Bytes")
-
-2) Adding the 'totalOctets' Scripted field:
-
-In order to generate visualizations on total uplink and downlink Octets consumed by a subscriber, a new scripted field called 'totalOctets' is created. To create a Scripted field, go to 'Settings' \> 'Indices' \> logstash-netflow\* \> 'scripted fields' tab, then click on 'Add Scripted Field':
-
-![Kibana-ScriptedField-initial](/images/kibana-ScriptedField-initial.png "Kibana-ScriptedField-initial")
-
-Name the new field as 'totalOctets', specify the format as 'Bytes', enter the enter the below formula in the script tab and click 'update field':
-```
-doc['netflow.downlinkOctets'].value + doc['netflow.uplinkOctets'].value
-```
+Detailed description: https://github.com/vignitin/jnpr-dpi-reporter
 
 ![Kibana-ScriptedField-totalOctets](/images/kibana-ScriptedField-totalOctets.png "Kibana-ScriptedField-totalOctets")
 
