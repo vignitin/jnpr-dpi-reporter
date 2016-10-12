@@ -12,9 +12,9 @@ The container also be used for visualizing any netflow version 5, 9 and 10 recor
 - Netflow v10: **4739/udp**
 
 The following ELK versions have been used:
-Logstash (collector): 2.4
-Elasticsearch (database/search engine): 2.4
-Kibana (front-end): 2.6.1
+- Logstash (collector): 2.4
+- Elasticsearch (database/search engine): 2.4
+- Kibana (front-end): 2.6.1
 
 Pre-requisites:
 ---------------
