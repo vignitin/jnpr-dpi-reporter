@@ -1,7 +1,7 @@
 jnpr-dpi-reporter: Data visualization tool for Juniper MX-based DPI
 ==================
 
-**jnpr-dpi-reporter** is a containerized data visualization tool for Juniper MX-based DPI devices. 
+**jnpr-dpi-reporter** is a containerized data visualization/reporting tool for Juniper MX-based DPI devices. 
 
 The Juniper MX-based Services Control Gateway (SCG) when configured as a DPI, exports information about the subscriber flows in the IPFIX format (RFC 7011). Along with the standard netflow fields, export IPFIX records also include Juniper enterprise-specific Information Elements that provide more detailed information about the flows. These records can be consumed by an IPFIX collector and fed into a data visualization tool.
 
